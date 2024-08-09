@@ -6,16 +6,16 @@ const ChatWindow = () => {
   const [message, setMessage] = useState("");
   const [chats, setChats] = useState([
     {
-      id: 0,
-      messageFrom: "other",
-      messageBody: "This is a recieved message",
-      time: "02:58 PM"
-    },
-    {
       id: 1,
       messageFrom: "user",
       messageBody: "This is a sent message",
       time: "02:59 PM"
+    },
+    {
+      id: 0,
+      messageFrom: "other",
+      messageBody: "This is a recieved message",
+      time: "02:58 PM"
     },
   ]);
 
@@ -55,12 +55,12 @@ const ChatWindow = () => {
       time: time
     }
 
-    setChats([...chats, newChat]);
+    setChats([newChat, ...chats]);
   }
 
   return (
     <>
-      <div className="overflow-y-scroll justify-end h-screen gap-8 p-11 sm:pb-[100px] pb-[200px] bg-[#f4f4f4]" ref={chatContainerRef}>
+      <div className="flex flex-col-reverse overflow-y-scroll h-screen gap-8 p-11 sm:pb-[100px] pb-[200px] bg-[#f4f4f4]" ref={chatContainerRef}>
         {
           chats.map((c) => (
             <MessageBox key={c.id} chat={c} />
