@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import paperPlaneTopIcon from "/paperPlaneTop.svg";
 import MessageBox from "./MessageBox"
 
+
 const ChatWindow = () => {
   const [message, setMessage] = useState("");
   const [chats, setChats] = useState([
